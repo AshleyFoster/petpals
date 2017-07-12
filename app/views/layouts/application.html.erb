@@ -9,27 +9,35 @@
   </head>
 
   <body>
-    <div class="header">
-      <% if user_signed_in?%>
-        <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-      <% else %>
-        <%= link_to root_path do %>
-          <h1 class="logo">PetPals</h1>
-        <% end %>
-
-        <%= link_to "Login", new_user_session_path %>
-        <%= link_to "Register", new_user_registration_path %>
+    <header>
+      <%= link_to root_path do %>
+        <h1 class="logo">Pet<i class="fa fa-paw" aria-hidden="true"></i>Pals</h1>
       <% end %>
-    </div>
+
+      <nav class="navbar-right">
+        <% if user_signed_in? %>
+          <p>Logged in as <strong><%= current_user.email %></strong></p>
+          <%= link_to 'Edit profile', edit_user_registration_path %>
+          <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+
+        <% else %>
+          <%= link_to "Register", new_user_registration_path %>
+          <%= link_to "Login", new_user_session_path %>
+        <% end %>
+      </nav>
+    </header>
 
     <% if notice %>
-      <p class="notice"><%= notice %></p>
+      <div class="flash-container notice">
+        <p class="flash"><%= notice %></p>
+      </div>
     <% end %>
 
     <% if alert %>
-      <p class="alert"><%= alert %></p>
+      <div class="flash-container alert">
+        <p class="flash"><%= alert %></p>
+      </div>
     <% end %>
-
     <%= yield %>
   </body>
 </html>
