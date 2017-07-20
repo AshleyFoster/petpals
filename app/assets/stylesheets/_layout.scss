@@ -6,7 +6,7 @@ html, body {
 }
 
 header {
-  background: $light-gray;
+  background: $light-blue;
   margin: 0;
   display: flex;
 
@@ -21,7 +21,7 @@ header {
       color: $primary;
 
       &:hover {
-        color: $dark-gray;
+        color: $blue;
       }
     }
   }
@@ -39,7 +39,7 @@ header {
       margin-right: 15px;
 
       &:hover {
-        color: $dark-gray;
+        color: $blue;
       }
     }
     p {
@@ -59,15 +59,15 @@ header {
 }
 
 a.btn {
-  background: $blue;
+  background: $light-blue;
   padding: 15px;
   border-radius: 3px;
-  color: $dark-gray;
+  color: $primary;
   text-decoration: none;
   display: inline-block;
 
   &:hover {
-    background: $dark-blue;
+    background: $blue;
     color: $primary;
   }
 }

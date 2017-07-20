@@ -5,11 +5,11 @@
   padding: 20px 0;
 
   &.notice {
-    background: $dark-blue;
+    background: $blue;
   }
 
   &.alert {
-    background: $dark-red;
+    background: $yellow;
   }
 
   & + * {
