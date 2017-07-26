@@ -33,4 +33,6 @@ Rails.application.configure do
   config.assets.quiet = true
 
   config.file_watcher = ActiveSupport::EventedFileUpdateChecker
+
+  Paperclip.options[:command_path] = "/usr/local/bin/"
 end

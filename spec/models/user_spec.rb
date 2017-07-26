@@ -1,5 +1,11 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  context 'validations' do
+    subject { FactoryGirl.build(:user) }
+
+    it do
+      should have_many(:pets)
+    end
+  end
 end

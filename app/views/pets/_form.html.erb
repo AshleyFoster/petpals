@@ -1,0 +1,23 @@
+<%= form_for @pet, html: { class: "pet-form", multipart: true } do |f| %>
+  <div class="form-group">
+    <%= f.label :name %>
+    <%= f.text_field :name, :placeholder => "Your pet's name" %>
+
+    <div class="field">
+      <%= f.label :sex %>
+      <%= f.select(:sex, [['Male', 'M'], ['Female', 'F']]) %>
+    </div>
+
+    <%= f.label :breed %>
+    <%= f.text_field :breed, :placeholder => "Ex. My pet is a mix of Pit Bull and Boxer" %>
+
+    <%= f.label :description %>
+    <%= f.text_field :description, :placeholder => "Tell us about your pet!" %>
+
+    <%= f.file_field :pic %>
+
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>

@@ -1,0 +1,7 @@
+<%= link_to pet_path(pet), :class => "pet-container" do %>
+  <div class="pet">
+    <%= image_tag pet.pic.url(:medium), :class => "pet-pic" %>
+  </div>
+
+  <h4 class="name"><%= pet.name %></h4>
+<% end %>

@@ -1,12 +1,13 @@
 html, body {
-  background: #fff;
+  background: $light-gray;
   margin: 0;
   color: $primary;
   font-family: Helvetica, Arial, sans-serif;
 }
 
 header {
-  background: $light-blue;
+  background: $white;
+  border-bottom: 1px solid $gray;
   margin: 0;
   display: flex;
 
@@ -21,7 +22,7 @@ header {
       color: $primary;
 
       &:hover {
-        color: $blue;
+        color: $ochre;
       }
     }
   }
@@ -39,7 +40,7 @@ header {
       margin-right: 15px;
 
       &:hover {
-        color: $blue;
+        text-decoration: underline;
       }
     }
     p {
@@ -49,7 +50,7 @@ header {
 }
 
 .container {
-  background-color: #fff;
+  background-color: $light-gray;
   max-width: 650px;
   margin: 0 auto;
   margin-top: 30px;
@@ -59,15 +60,24 @@ header {
 }
 
 a.btn {
-  background: $light-blue;
+  background: white;
   padding: 15px;
   border-radius: 3px;
+  border: 1px solid $primary;
+  box-sizing: border-box;
   color: $primary;
   text-decoration: none;
   display: inline-block;
 
   &:hover {
-    background: $blue;
-    color: $primary;
+    color: $ochre;
+    border: 1px solid $ochre;
   }
+}
+
+.petpal {
+  max-width: 650px;
+  display: block;
+  margin: auto;
+  margin-bottom: 20px;
 }

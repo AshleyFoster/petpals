@@ -1,0 +1,69 @@
+.pet-form {
+  padding: 15px;
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 8px;
+  color: $primary;
+  font-weight: 600;
+}
+
+input {
+  align-items: center;
+  border: none;
+  border-bottom: 1px solid $gray;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+  padding: 12px 10px;
+  width: 100%;
+  margin-bottom: 20px;
+  outline: none;
+
+  &:focus {
+    display: inline-block;
+    border: none;
+    border-bottom: 1px solid $ochre;
+    outline: none;
+    margin-bottom: 20px;
+  }
+}
+
+select#pet_sex {
+  display: flex;
+  outline: none;
+  border: none;
+  background-color: $white;
+  border-bottom: 1px solid $gray;
+  height: 29px;
+  width: 25%;
+  margin-bottom: 20px;
+  font-size: 14px;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  display: flex;
+  line-height: 20px;
+
+  input[type=submit] {
+    background-color: $white;
+    border: 1px solid $primary;
+    border-radius: 5;
+    font-size: 16px;
+    font-weight: 600;
+    padding: 15px;
+    margin-top: 10px;
+    user-select: none;
+    color: $primary;
+
+    &:hover {
+      background-color: $gray;
+      border: 1px solid $ochre;
+      color: $ochre;
+    }
+  }
+}

@@ -2,6 +2,8 @@
   <h1> Welcome to PetPals! </h1>
   <h4>Where you're best friend can make some more pals!</h4>
 
+  <%= image_tag("petpals.jpg", :class => "petpal") %>
+
   <% if user_signed_in? %>
     <%# <%= link_to "Add a Pet",new_pet_path %1> %>
   <% else %>

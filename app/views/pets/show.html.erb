@@ -1,0 +1,34 @@
+<div class="pet-dash">
+  <div class="top">
+    <div class="alternate-actions">
+      <%= link_to root_path do %>
+        <i class="fa fa-caret-left" aria-hidden="true"></i>Back
+      <% end %>
+    </div>
+
+    <div class="actions">
+      <% if @pet.user = current_user %>
+        <%= link_to "Edit", edit_pet_path %>
+          <%= link_to pet_path(@pet), class: "delete", method: :delete, data: {confirm: "Remove this pet?"} do %>
+            <i class="fa fa-times" aria-hidden="true" title="delete"></i>
+          <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="pic-container">
+    <%= image_tag @pet.pic.url, :class => "pic" %>
+  </div>
+
+  <div class="pet-info">
+    <h3 class="dash-name"><%= @pet.name %></h3>
+    <p><%= @pet.sex.upcase %></p>
+    <p><%= @pet.breed %></p>
+    <p><%= @pet.description %></p>
+    <p>Location</p>
+  </div>
+
+  <div class="park">
+    Cocoa's favorate park
+  </div>
+</div>

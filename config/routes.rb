@@ -3,5 +3,9 @@ Rails.application.routes.draw do
 
   resources :pets
 
+  authenticated do
+    root :to => 'pets#index', as: :authenticated
+  end
+
   root to: "home#index"
 end

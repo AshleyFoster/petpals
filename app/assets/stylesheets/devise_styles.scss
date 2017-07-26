@@ -18,18 +18,17 @@
     margin-bottom: 8px;
     color: $primary;
     font-weight: 600;
-    color: $blue;
   }
 
   em {
-    color: $blue;
+    color: $primary;
     font-style: normal;
   }
 
   input {
     align-items: center;
     border: none;
-    border-bottom: 1px solid $light-blue;
+    border-bottom: 1px solid $gray;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -42,7 +41,7 @@
     input:focus {
       display: inline-block;
       border: none;
-      border-bottom: 1px solid $blue;
+      border-bottom: 1px solid $ochre !important;
       outline: none;
       margin-bottom: 20px;
     }
@@ -56,8 +55,8 @@
   line-height: 20px;
 
   input[type=submit] {
-    background-color: $light-blue;
-    border: none;
+    background: $white;
+    border: 1px solid $primary;
     border-radius: 5;
     font-size: 16px;
     font-weight: 600;
@@ -67,15 +66,16 @@
     color: $primary;
 
     &:hover {
-      background-color: $blue;
-      color: $primary;
+      background: $white;
+      color: $ochre;
+      border: 1px solid $ochre;
     }
   }
 }
 
 input[type=submit] {
-  background-color: $light-blue;
-  border: none;
+  background-color: $white;
+  border: 1px solid $primary;
   border-radius: 5;
   font-size: 16px;
   font-weight: 600;
@@ -85,8 +85,8 @@ input[type=submit] {
   color: $primary;
 
   &:hover {
-    background-color: $yellow;
-    color: $primary;
+    color: $ochre;
+    border: 1px solid $ochre;
   }
 }
 
@@ -94,14 +94,18 @@ input[type=submit] {
   a {
     display: block;
     text-align: center;
-    color: $blue;
+    color: $primary;
     font-size: 16px;
     font-weight: 500;
     text-decoration: none;
 
     &:hover {
-      color: $primary;
       text-decoration: underline;
     }
   }
+}
+
+.remember_field {
+  display: flex;
+  flex-direction: column-reverse;
 }

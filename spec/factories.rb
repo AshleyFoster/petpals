@@ -3,13 +3,18 @@ FactoryGirl.define do
     "email#{n}@factory.com"
   end
 
-  factory :pet do
-    name "Rover"
-  end
-
   factory :user do
     email
     password "password"
     password_confirmation "password"
+  end
+
+  factory :pet do
+    name "Rover"
+    sex "M"
+    breed "Golden Retriever"
+    description "Rover is a cutie."
+    pic { File.new("#{Rails.root}/app/assets/images/petpals.jpg") }
+    user
   end
 end
