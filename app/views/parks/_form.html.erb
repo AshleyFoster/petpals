@@ -1,0 +1,13 @@
+<%= form_for(@park) do |f| %>
+  <div class="form-group">
+    <%= f.label :address %>
+    <%= f.text_field :address, :placeholder => "A pet friendly Park!" %>
+
+    <%= f.label :details %>
+    <%= f.text_field :details, :placeholder => "Give a small description of the park. Is it enclosed? Is there a leash-less area?" %>
+
+    <div class="action">
+      <%= f.submit %>
+    </div>
+  </div>
+<% end %>

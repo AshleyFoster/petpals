@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   authenticated do
     root :to => 'pets#index', as: :authenticated
   end
+  resources :parks
 
   root to: "home#index"
 end

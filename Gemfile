@@ -5,7 +5,6 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-
 gem 'rails', '~> 5.1.0.rc2'
 gem 'pg'
 gem 'puma', '~> 3.7'
@@ -22,6 +21,8 @@ gem 'bourbon', '~> 4.2', '>= 4.2.6'
 gem 'neat', '~> 2.1'
 gem 'font-awesome-sass', '~> 4.7.0'
 gem "paperclip", git: "git://github.com/thoughtbot/paperclip.git"
+gem 'geocoder'
+gem 'kaminari'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]

@@ -3,6 +3,13 @@ FactoryGirl.define do
     "email#{n}@factory.com"
   end
 
+  factory :park do
+    address "New York"
+    latitude 40.7143528
+    longitude -74.0059731
+    details "Concrete jungle"
+  end
+
   factory :user do
     email
     password "password"

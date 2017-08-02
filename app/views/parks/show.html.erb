@@ -1,0 +1,45 @@
+<div class="container">
+  <div class="top">
+    <div class="alternate-actions">
+      <%= link_to parks_path(params[:search]) do%>
+        <i class="fa fa-caret-left" aria-hidden="true"></i>Back
+      <% end %>
+    </div>
+
+    <div class="actions">
+      <% if @park.user = current_user %>
+        <%= link_to "Edit", edit_park_path %>
+        <%= link_to park_path(@park), class: "delete", method: :delete, data: {confirm: "Remove this park?"} do %>
+          <i class="fa fa-times" aria-hidden="true" title="delete"></i>
+        <% end %>
+      <% end %>
+  </div>
+</div>
+
+<div class="park-info">
+  <h3 class="park-name"> <%= @park.address %></h3>
+  <p class="park-details"><%= @park.details %></p>
+</div>
+
+<%= image_tag  "http://maps.googleapis.com/maps/api/staticmap?center=#{@park.latitude},#{@park.longitude}&markers=#{@park.latitude},#{@park.longitude}&zoom=14&size=650x250&key=AIzaSyA4BHW3txEdqfxzdTlPwaHsYRSZbfeIcd8",
+  class: 'park-map'%>
+
+<div class="bottom">
+  <div class="bottom-left">
+    <div class="nearby">
+      <h4>Nearby Parks</h4>
+      <% for park in @park.nearbys(10) %>
+        <%= link_to park.address, park %> (<%= park.distance.round(2) %> miles)
+      <% end %>
+    </div>
+  </div>
+
+  <div class="bottom-right">
+    <div class="other-info">
+      <h4>Visits and Favorites</h4>
+      <p>0 users have visited</p>
+      <p>0 pet have favorited</p>
+    </div>
+  </div>
+</div>
+</div>
