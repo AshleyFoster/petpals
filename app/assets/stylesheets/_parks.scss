@@ -1,82 +1,13 @@
-//index
-.search-container {
-  background: $primary; // $gray
-  padding: 10px 0;
-
-  .search {
-    max-width: 650px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    width: 100%;
-    margin: 0 auto;
-
-    form {
-      display: flex;
-      flex: 1;
-
-      input[type=text] {
-        border: none;
-        border-bottom: 1px solid; // $gray
-        box-sizing: border-box;
-        font-size: 14px;
-        padding: 0 10px;
-        width: 100%;
-        margin: 20px;
-        outline: none;
-
-        &:focus {
-          display: inline-block;
-          border: none;
-          border-bottom: 1px solid; // $ochre
-          outline: none;
-          margin-bottom: 20px;
-        }
-      }
-
-      .actions {
-        display: flex;
-
-        input[type=submit] {
-          background-color: $white;
-          border: 1px solid $primary;
-          border-radius: 5;
-          font-size: 16px;
-          font-weight: 600;
-          padding: 12px 10px;
-          user-select: none;
-          color: $primary;
-          margin: 20px 0;
-
-          &:hover {
-            background-color: $white;
-            border: 1px solid $primary; // $ochre
-            color: $primary; // $ochre
-          }
-        }
-      }
-    }
-
-    .add-park {
-
-      a {
-        text-decoration: none;
-        color: $white;
-        margin: 20px 16px;
-
-        &:hover {
-          text-decoration: underline;
-          color: $primary; // $ochre
-        }
-      }
-    }
-  }
+// Index
+.index {
+  background: $light-gray;
 }
 
 .full-search-container {
-  background: $white; // $gray
+  background: $light-gray;
   padding: 10px 0;
-
+  max-width: 650px;
+  margin: auto;
 
   .search-full {
     max-width: 650px;
@@ -98,20 +29,19 @@
 
       input[type=text] {
         border: none;
-        border-bottom: 1px solid; // $gray
+        border-bottom: 1px solid;
         box-sizing: border-box;
         font-size: 14px;
-        padding: 10px;
+        padding: 10px 20px;
         width: 100%;
-        margin: 10px 20px;
         outline: none;
+        margin: 20px 0;
 
         &:focus {
           display: inline-block;
           border: none;
-          border-bottom: 1px solid; // $ochre
+          border-bottom: 1px solid $ochre;
           outline: none;
-          margin-bottom: 20px;
         }
       }
 
@@ -122,18 +52,17 @@
         input[type=submit] {
           background-color: $white;
           border: 1px solid $primary;
-          border-radius: 5;
           font-size: 16px;
           font-weight: 600;
           padding: 12px 10px;
           user-select: none;
           color: $primary;
-          margin: 20px;
+          margin: 20px 0;
 
           &:hover {
             background-color: $white;
-            border: 1px solid $primary; // $ochre
-            color: $primary; // $ochre
+            border: 1px solid $ochre;
+            color: $ochre;
           }
         }
       }
@@ -141,10 +70,83 @@
   }
 }
 
+.search-container {
+  background: $gray;
+  padding: 10px 0;
+
+  .search {
+    max-width: 650px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+
+    form {
+      display: flex;
+      flex: 1;
+
+      input[type=text] {
+        border: none;
+        border-bottom: 1px solid;
+        box-sizing: border-box;
+        font-size: 14px;
+        padding: 0 10px;
+        width: 100%;
+        margin: 20px;
+        outline: none;
+
+        &:focus {
+          display: inline-block;
+          border: none;
+          border-bottom: 1px solid $ochre;
+          outline: none;
+          margin-bottom: 20px;
+        }
+      }
+
+      .actions {
+        display: flex;
+
+        input[type=submit] {
+          background-color: $white;
+          border: 1px solid $primary;
+          border-radius: 5;
+          font-size: 16px;
+          font-weight: 600;
+          padding: 12px 10px;
+          user-select: none;
+          color: $primary;
+          margin: 20px 0;
+
+          &:hover {
+            background-color: $white;
+            border: 1px solid $ochre;
+            color: $ochre;
+          }
+        }
+      }
+    }
+
+    .add-park {
+      a {
+        text-decoration: none;
+        color: $white;
+        margin: 20px 16px;
+
+        &:hover {
+          text-decoration: underline;
+          color: $ochre;
+        }
+      }
+    }
+  }
+}
+
 .main {
+  background: $light-gray;
   display: flex;
   flex-direction: row;
-  background-color: #fff;
   max-width: 650px;
   margin: 0 auto;
   padding: 20px;
@@ -154,12 +156,11 @@
     margin: 0 auto;
     width: 100%;
 
-    .parks-map {
-    }
-
     #map {
       height: 400px;
       width: 100%;
+      border: 1px solid $gray;
+      border-radius: 3;
     }
   }
 
@@ -172,45 +173,50 @@
     text-align: left;
 
     nav.pagination {
+      border-top: 1px solid $gray;
       padding: 8px;
       padding-top: 16px;
       margin: 8px;
-      border-top: 1px solid $primary;
 
       a {
-      color: $primary;
-      padding: 0 5px;
+        color: $primary;
+        padding: 0 5px;
 
-      &:hover {
-        color: $primary; // $ochre
-        text-decoration: none;
-      }
-
+        &:hover {
+          color: $ochre;
+          text-decoration: none;
+        }
       }
     }
 
     .park-container {
-      border-top: 1px solid; // $gray
+      border: none;
+      border-top: 1px solid $gray;
       text-decoration: none;
       padding: 0;
       padding-right: 5px;
 
       &:last-child {
-        border-bottom: 1px solid; // $gray
+        border: none;
+        border-top: 1px solid $gray;
+        border-bottom: 1px solid $gray;
       }
 
       .park {
+        background: $light-gray;
         font-size: 16px;
         font-weight: 600px;
         color: $primary;
         padding: 8px;
         box-sizing: border-box;
+        border: none;
 
         h4 {
-          margin: 16px 0;
+          margin: 9px 0;
 
           &:hover {
             text-decoration: underline;
+            color: $ochre;
           }
         }
 
@@ -223,8 +229,7 @@
   }
 }
 
-//show
-
+// Show
 .top {
   display: flex;
 
@@ -272,29 +277,37 @@
       color: $primary;
 
       &:hover {
-        color: $primary; // $ochre
+        color: $ochre;
       }
     }
   }
 }
 
 .park-info {
+  background: $white;
   flex: 1;
   text-align: center;
   margin: 0;
   padding: 20px;
-  border: 1px solid $primary;
+  border: 1px solid $gray;
+  border-radius: 3;
 }
 
 .park-map {
   border-radius: 3;
+  border: 1px solid $gray;
+  box-sizing: border-box;
+  margin: 8px 0;
 }
 
 .bottom {
   margin: 0;
   display: flex;
   flex-direction: row;
-  border: 1px solid; // $gray
+  border: 1px solid $gray;
+  border-radius: 3;
+  background: $white;
+  box-sizing: border-box;
 
   h4 {
     margin-bottom: 10px;
@@ -305,7 +318,7 @@
     max-width: 50%;
     width: max-content;
     justify-content: center;
-    border-right: 1px solid; // $gray
+    border-right: 1px solid $gray;
 
     .nearby {
       display: flex;
@@ -322,6 +335,7 @@
 
         &:hover {
           text-decoration: underline;
+          color: $ochre;
         }
       }
     }

@@ -1,10 +1,9 @@
 class ParksController < ApplicationController
-
   def index
     if params[:search].present?
-      @parks = Park.near(params[:search], 50).page params[:page]
+      @parks = Park.near(params[:search], Park::SEARCH_RADIUS).page params[:page]
     else
-    @parks = Park.all
+      @parks = Park.all
     end
   end
 
@@ -17,8 +16,8 @@ class ParksController < ApplicationController
   end
 
   def create
-    @park = Park.create(park_params)
-    @park.user = current_user
+    @park = current_user.parks.build(park_params)
+
     if @park.save
       redirect_to park_path(@park), notice: "This park has been added!"
     else
@@ -27,27 +26,27 @@ class ParksController < ApplicationController
     end
   end
 
- def edit
-     @park = Park.find(params[:id])
-   end
+  def edit
+    @park = Park.find(params[:id])
+  end
 
-   def update
-     @park = Park.find(params[:id])
-     @park.user = current_user
+  def update
+    @park = Park.find(params[:id])
+    @park.user == current_user
 
-     if @park.update_attributes(park_params)
-       redirect_to parks_path, notice: "Park Updated"
-     else
-       flash.now[:alert] = "Unable to update park"
-       render 'edit'
-     end
-   end
+    if @park.update_attributes(park_params)
+      redirect_to park_path(@park), notice: "Park Updated"
+    else
+      flash.now[:alert] = "Unable to update park"
+      render 'edit'
+    end
+  end
 
-   def destroy
-     @park = Park.find(params[:id])
-     @park.destroy
-     redirect_to parks_path, notice: "Park Removed"
-   end
+  def destroy
+    @park = Park.find(params[:id])
+    @park.destroy
+    redirect_to parks_path, notice: "Park Removed"
+  end
 
   private
 

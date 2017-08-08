@@ -6,6 +6,7 @@ RSpec.describe User, type: :model do
 
     it do
       should have_many(:pets)
+      should have_many(:parks)
     end
   end
 end

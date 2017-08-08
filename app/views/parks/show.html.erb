@@ -1,14 +1,11 @@
 <div class="container">
   <div class="top">
     <div class="alternate-actions">
-      <%= link_to parks_path(params[:search]) do%>
-        <i class="fa fa-caret-left" aria-hidden="true"></i>Back
-      <% end %>
     </div>
 
     <div class="actions">
-      <% if @park.user = current_user %>
-        <%= link_to "Edit", edit_park_path %>
+      <% if @park.user == current_user %>
+        <%= link_to "Edit", edit_park_path(@park) %>
         <%= link_to park_path(@park), class: "delete", method: :delete, data: {confirm: "Remove this park?"} do %>
           <i class="fa fa-times" aria-hidden="true" title="delete"></i>
         <% end %>

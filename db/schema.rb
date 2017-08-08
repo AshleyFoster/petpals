@@ -16,13 +16,13 @@ ActiveRecord::Schema.define(version: 20170727185629) do
   enable_extension "plpgsql"
 
   create_table "parks", force: :cascade do |t|
-    t.string "address"
-    t.float "latitude"
-    t.float "longitude"
-    t.text "details"
+    t.string "address", null: false
+    t.float "latitude", null: false
+    t.float "longitude", null: false
+    t.text "details", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.bigint "user_id"
+    t.bigint "user_id", null: false
     t.index ["user_id"], name: "index_parks_on_user_id"
   end
 
