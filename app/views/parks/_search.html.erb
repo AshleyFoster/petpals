@@ -1,0 +1,12 @@
+<div class="full-search-container">
+  <div class="search-full">
+    <%= form_tag(parks_path, method: :get) do %>
+      <h3>Search for parks in your area</h3>
+      <%= text_field_tag :search, params[:search],
+        placeholder: "Search by City / Zip Code" %>
+      <div class="actions">
+        <%= submit_tag "Search Near", :name => nil %>
+      </div>
+    <% end %>
+  </div>
+</div>

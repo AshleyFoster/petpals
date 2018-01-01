@@ -1,0 +1,57 @@
+<div class="search-container">
+  <div class="search">
+    <%= form_tag(parks_path, method: :get) do %>
+      <%= text_field_tag :search, params[:search],
+        placeholder: "Search by City / Zip Code" %>
+      <div class="actions">
+        <%= submit_tag "Search Near", :name => nil %>
+      </div>
+    <% end %>
+    <div class="add-park">
+      <%= link_to "Add a park!", new_park_path %>
+    </div>
+  </div>
+</div>
+
+<div class="main">
+  <div class="parks-container">
+    <% if @parks.any? %>
+      <%= render @parks %>
+      <%= paginate @parks, left: 2, right: 2 %>
+    <% else %>
+      <div class="no-parks">
+        <h4>No parks have been added yet!</h4>
+      </div>
+    <% end %>
+  </div>
+
+  <div class="map-container">
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var coords = <%= @parks.map { |park| { lat: park.latitude, lng: park.longitude} }.to_json.html_safe %>
+        var bounds = new google.maps.LatLngBounds();
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: {lat: 39.8097, lng: 98.5556}
+        });
+
+        coords.forEach(function(coord) {
+          console.log('put a pin on the map')
+
+          var marker = new google.maps.Marker({
+            position: coord,
+            map: map
+          });
+          bounds.extend(coord);
+          map.fitBounds(bounds);
+        });
+      }
+    </script>
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDUsNggEpQlvX4THGB36KNsHWYYgi2SgXM&callback=initMap">
+    </script>
+  </div>
+</div>
