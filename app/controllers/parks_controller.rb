@@ -1,9 +1,9 @@
 class ParksController < ApplicationController
   def index
     if params[:search].present?
-      @parks = Park.near(params[:search], Park::SEARCH_RADIUS).page params[:page]
+      @parks = Park.near(params[:search]).page params[:page]
     else
-      @parks = Park.all
+      @parks = Park.order('created_at DESC').page params[:page]
     end
   end
 
